@@ -6,6 +6,7 @@ import '../pending/pending_page.dart';
 import '../pending/models/pending.dart';
 import '../history/history_page.dart';
 import '../history/models/selected_services.dart';
+
 // import '../organization/models/organization.dart';
 // import '../organization/models/organization_service.dart';
 // import '../organization/organization_page.dart';
@@ -75,41 +76,44 @@ class TestClass {
   );
    */
 
-  /*
-  final Widget pend = CategoryPage(
-    categoryInfo: Category("Category 1", [
-      OrganizationForCategory(
-          {"title": "Organization Name 1", "image": "images/test_image1.png"},
-          ['wedding', 'funerals', 'quests', 'wedding', 'funerals', 'quests']),
-      OrganizationForCategory(
-          {"title": "Organization Name 2", "image": "images/test_image1.png"},
-          ['wedding', 'funerals', 'quests']),
-      OrganizationForCategory(
-          {"title": "Organization Name 3", "image": "images/test_image1.png"},
-          ['wedding', 'funerals', 'quests']),
-      OrganizationForCategory({
-        "title": "Very Very Very Long Organization Name 4",
-        "image": "images/test_image1.png"
-      }, [
-        'wedding',
-        'funerals',
-        'quests'
-      ]),
-      OrganizationForCategory(
-          {"title": "Organization Name 5", "image": "images/test_image1.png"},
-          ['wedding', 'funerals', 'quests']),
-      OrganizationForCategory(
-          {"title": "Organization Name 6", "image": "images/test_image1.png"},
-          ['wedding', 'funerals', 'quests']),
-      OrganizationForCategory(
-          {"title": "Organization Name 7", "image": "images/test_image1.png"},
-          ['wedding', 'funerals', 'quests']),
-      OrganizationForCategory(
-          {"title": "Organization Name 8", "image": "images/test_image1.png"},
-          ['wedding', 'funerals', 'quests']),
-    ]),
+  final Widget pend = PendingPage(
+    selectedServiceList: [
+      Pending(
+        customer: "customer",
+        service: SelectedService(
+          // TODO: Посмотреть другие форматы
+          date: DateFormat.yMMMEd().format(DateTime.now()),
+          image: 'images/service.jpg',
+          title: 'Service 1',
+          description:
+              'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
+          price: 1000,
+        ),
+      ),
+      Pending(
+        customer: "customer",
+        service: SelectedService(
+          date: DateFormat.yMMMEd().format(DateTime.now()),
+          image: 'images/service.jpg',
+          title: 'Service 2',
+          description:
+          'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
+          price: 9000,
+        ),
+      ),
+      Pending(
+        customer: "customer",
+        service: SelectedService(
+          date: DateFormat.yMMMEd().format(DateTime.now()),
+          image: 'images/service.jpg',
+          title: 'Service 3',
+          description:
+          'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
+          price: 4500,
+        ),
+      ),
+    ],
   );
-   */
 
   // final Widget bakP = BasketPage(
   //   serviceList: [
@@ -189,45 +193,47 @@ class TestClass {
       ),
     ],
   );
+
   // final Profile profile =
-  final ProfilePage profilePage = ProfilePage(profile:Profile({
-    "name": " Pistoletov",
-    "sex": "male",
-    "email": "@mail",
-    "avatar": "assets/images/smile_face.png",
-    "phoneNumber": "+70000000000",
-    "regionData": "Saratov",
-  },
-      [
-        OrganizationService(
-          image: 'images/service.jpg',
-          title: 'Service 1',
-          description:
-              'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
-          price: 1000,
-        ),
-        OrganizationService(
-          image: 'images/service.jpg',
-          title: 'Service 2',
-          description:
-              'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
-          price: 1000,
-        ),
-        OrganizationService(
-          image: 'images/service.jpg',
-          title: 'Service 3',
-          description:
-              'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
-          price: 1000,
-        ),
-        OrganizationService(
-          image: 'images/service.jpg',
-          title: 'Service 4',
-          description:
-              'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
-          price: 1000,
-        ),
-      ],
-  )
-  );
+  final ProfilePage profilePage = ProfilePage(
+      profile: Profile(
+    {
+      "name": " Pistoletov",
+      "sex": "male",
+      "email": "@mail",
+      "avatar": "assets/images/smile_face.png",
+      "phoneNumber": "+70000000000",
+      "regionData": "Saratov",
+    },
+    [
+      OrganizationService(
+        image: 'images/service.jpg',
+        title: 'Service 1',
+        description:
+            'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
+        price: 1000,
+      ),
+      OrganizationService(
+        image: 'images/service.jpg',
+        title: 'Service 2',
+        description:
+            'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
+        price: 1000,
+      ),
+      OrganizationService(
+        image: 'images/service.jpg',
+        title: 'Service 3',
+        description:
+            'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
+        price: 1000,
+      ),
+      OrganizationService(
+        image: 'images/service.jpg',
+        title: 'Service 4',
+        description:
+            'Cras sem metus, tincidunt vel aliquet eu, condimentum id sem. Phasellus feugiat tellus dolor, tincidunt porta orci suscipit vel. Etiam ultrices, eros eu venenatis varius, urna nisi euismod dolor,',
+        price: 1000,
+      ),
+    ],
+  ));
 }

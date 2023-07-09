@@ -64,7 +64,7 @@ class App extends StatelessWidget {
       routes: {
         // "/homepage" :(context) => const HomePage(),
         "/": (context) => TestClass().profilePage,
-        // "/pending": (context) => TestClass().pend,
+        "/pending": (context) => TestClass().pend,
         //"/organization": (context) => TestClass().orgPage,
         //"/profile": (context) => TestClass().profilePage,
         "/profile/history": (context) => TestClass().histP,

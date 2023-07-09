@@ -11,9 +11,9 @@ class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key, required this.profile});
 
   //TODO:вынести
-  goToHome(BuildContext context){
-    debugPrint("Go to home page");
-    Navigator.of(context).pushNamed("/");
+  goToPending(BuildContext context){
+    debugPrint("Go to home pending");
+    Navigator.of(context).pushNamed("/pending");
   }
   goToOrdersHistory(BuildContext context){
     debugPrint("Go to Order's History");
@@ -27,10 +27,10 @@ class ProfilePage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.blueGrey[700],
           leading: IconButton(
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.edit_calendar),
             tooltip: 'Home page',
             onPressed: () {
-              goToHome(context);
+              goToPending(context);
             },
           ),
           actions: [
