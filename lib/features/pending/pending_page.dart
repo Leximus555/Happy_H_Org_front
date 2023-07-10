@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:organization_app1/features/pending/models/pending.dart';
+import 'package:organization_app1/features/pending/models/pending_service_holder.dart';
 
 import '../history/models/selected_service_holder.dart';
 import '../profile/models/organization_service_holder.dart';
@@ -57,7 +58,7 @@ class PendingPage extends StatelessWidget {
             children: List.generate(selectedServiceList.length, (index) {
               // TODO: Заменить на другой виджет, чтобы нельзя было закать повтороно в корзине
               // TODO: Подумуть нужно ли замечание выше
-              return SelectedServiceHolder(service: selectedServiceList[index].service);
+              return PendingServiceHolder(service: selectedServiceList[index].service);
             }),
           ),
         ],

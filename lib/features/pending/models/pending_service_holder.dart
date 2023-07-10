@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:organization_app1/features/history/models/selected_services.dart';
 
-class SelectedServiceHolder extends StatelessWidget {
+class PendingServiceHolder extends StatelessWidget {
   final SelectedService service;
 
-  const SelectedServiceHolder({
+  const PendingServiceHolder({
     Key? key,
     required this.service,
   }) : super(key: key);
@@ -43,34 +43,34 @@ class SelectedServiceHolder extends StatelessWidget {
                             showDialog(
                                 context: context,
                                 builder: (context) => SimpleDialog(
-                                      title: SingleChildScrollView(
-                                        child: Column(children: [
-                                          Text(service.title),
-                                          AspectRatio(
-                                              aspectRatio: 1 / 1,
-                                              child: Image(
-                                                image:
-                                                    AssetImage(service.image),
-                                              )),
-                                          const Text("Description"),
-                                          // TODO: Прикол с тем что текст не всегда поместиться
-                                          Text(service.description),
-                                        ]),
+                                  title: SingleChildScrollView(
+                                    child: Column(children: [
+                                      Text(service.title),
+                                      AspectRatio(
+                                          aspectRatio: 1 / 1,
+                                          child: Image(
+                                            image:
+                                            AssetImage(service.image),
+                                          )),
+                                      const Text("Description"),
+                                      // TODO: Прикол с тем что текст не всегда поместиться
+                                      Text(service.description),
+                                    ]),
+                                  ),
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20),
+                                      child: ElevatedButton(
+                                        onPressed: () {},
+                                        style: Theme.of(context)
+                                            .elevatedButtonTheme
+                                            .style,
+                                        child: const Text("Put in Basket"),
                                       ),
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 20),
-                                          child: ElevatedButton(
-                                            onPressed: () {},
-                                            style: Theme.of(context)
-                                                .elevatedButtonTheme
-                                                .style,
-                                            child: const Text("Put in Basket"),
-                                          ),
-                                        )
-                                      ],
-                                    ));
+                                    )
+                                  ],
+                                ));
                           }),
                         ),
                       ],
@@ -105,9 +105,9 @@ class SelectedServiceHolder extends StatelessWidget {
                                           horizontal: 10),
                                       child: Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
@@ -128,7 +128,39 @@ class SelectedServiceHolder extends StatelessWidget {
                                               ),
                                             ),
                                           ])),
-                                ]),
+                                  Table(
+                                      children: [
+                                        TableRow(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.all(10),
+                                              child: ElevatedButton(
+                                                onPressed: () {
+                                                  debugPrint("accept the order");
+                                                },
+                                                style: ElevatedButton.styleFrom(
+                                                  backgroundColor: Colors.teal,
+                                                ),
+                                                child: const Text("Accept"),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.all(10),
+                                              child: ElevatedButton(
+                                                onPressed: () {
+                                                  debugPrint("reject an order");
+                                                },
+                                                style: ElevatedButton.styleFrom(
+                                                  backgroundColor: Colors.redAccent,
+                                                ),
+                                                child: const Text("Reject"),
+                                              ),
+                                            ),
+                                          ],)
+                                      ]
+                                  ),
+                                ]
+                                ),
                               ),
                             ],
                           )))

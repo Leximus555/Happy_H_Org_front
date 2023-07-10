@@ -102,12 +102,12 @@ class OrganizationServiceHolder extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: ElevatedButton(
                               onPressed: () {
-                                // TODO: Добавление в корзину
-                                debugPrint("Add to basket");
+                                // TODO: Изменение параметров услуги
+                                debugPrint("Edit service");
                               },
                               style:
                                   Theme.of(context).elevatedButtonTheme.style,
-                              child: const Text("Put in Basket"),
+                              child: const Text("Edit service"),
                             ),
                           )
                         ],
