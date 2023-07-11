@@ -57,19 +57,7 @@ class SelectedServiceHolder extends StatelessWidget {
                                           Text(service.description),
                                         ]),
                                       ),
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 20),
-                                          child: ElevatedButton(
-                                            onPressed: () {},
-                                            style: Theme.of(context)
-                                                .elevatedButtonTheme
-                                                .style,
-                                            child: const Text("Put in Basket"),
-                                          ),
-                                        )
-                                      ],
+                                      children: [],
                                     ));
                           }),
                         ),
